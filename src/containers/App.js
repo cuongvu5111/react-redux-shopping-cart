@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Badge, Button, Modal} from 'react-bootstrap';
+import { Container, Row, Col, Badge} from 'react-bootstrap';
 import Products from '../components/Products';
 import Cart from '../components/Cart';
 function App() {
@@ -24,8 +24,5 @@ function App() {
 
   );
 }
-
-
-
 
 export default App;

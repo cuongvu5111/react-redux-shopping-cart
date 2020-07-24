@@ -38,9 +38,9 @@ const quantityById = (state = initialState.quantityById, action) => {
     }
 };
 
-
 export const getQuantity = (state, productId) =>
     state.quantityById[productId] || 0;
+
 export const getAddedIds = state => state.addedIds;
 
 const cart = (state = initialState, action) => {

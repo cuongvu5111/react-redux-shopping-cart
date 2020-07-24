@@ -16,10 +16,17 @@ export const getAllProducts = () => dispatch => {
     })
 };
 
+export const getProductById = (productId) => {
+    if(_products.length > 0 ){
+        return _products[productId-1];
+    }
+
+};
 const addToCartUnsafe = productId => ({
     type: types.ADD_TO_CART,
     productId
 });
+
 
 export const addToCart = productId => (dispatch, getState) => {
     if (getState().products.byId[productId].inventory > 0) {
@@ -27,12 +34,13 @@ export const addToCart = productId => (dispatch, getState) => {
     }
 };
 
+
 const removeToCartUnsafe = productId => ({
     type: types.REMOVE_TO_CART,
-    productId
+    productId,
 });
 
-export const removeToCart = productId => (dispatch, getState) => {
+export const removeToCart = productId => (dispatch) => {
         dispatch(removeToCartUnsafe(productId))
 };
 
