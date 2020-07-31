@@ -11,12 +11,11 @@ const Cart = ({ products, total, checkout, removeToCart }) => {
     const handleShow = () => setShow(true);
 
     const hasProducts = products.length > 0 && total > 0;
-
     const itemCart = hasProducts ?
         products.map((product,index) => (
             <div key={index}>
                 {product.quantity > 0 ?
-                    (<CartItem product={product} onRemoveClick={() => removeToCart(product.id)} />) : ''
+                    (<CartItem product={product} onRemoveClick={() => removeToCart(product.id, product.quantity)} />) : ''
                 }
 
             </div>

@@ -35,13 +35,14 @@ export const addToCart = productId => (dispatch, getState) => {
 };
 
 
-const removeToCartUnsafe = productId => ({
+const removeToCartUnsafe = (productId,inventory) => ({
     type: types.REMOVE_TO_CART,
     productId,
+    inventory
 });
 
-export const removeToCart = productId => (dispatch) => {
-        dispatch(removeToCartUnsafe(productId))
+export const removeToCart = (productId, inventory) => (dispatch) => {
+        dispatch(removeToCartUnsafe(productId, inventory))
 };
 
 export const checkout = products => (dispatch, getState) => {
